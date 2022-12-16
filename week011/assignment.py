@@ -2,8 +2,8 @@ class Package:
     def __init__(self, name, weight):
         self.name = name
         self.weight = weight
-    def dropOff(self, driver):
-        print(f"Delivered {self.name} weighing {self.weight} pounds by {driver} of truck {truck.Number}")
+    def dropOff(self, driver, truckNumber):
+        print(f"Delivered {self.name} weighing {self.weight} pounds by {driver} of truck {truckNumber}")
 
 def __init__(self, truckNumber):
     self.truckNumber = truckNumber
@@ -18,14 +18,12 @@ class AmazonTruck:
 
     def deliver(self):
         for package in self.packages:
-            package.dropOff(self.driver)
+            package.dropOff(self.driver, self.truckNumber)
 
-xbox = Package("xbox")
-xbox.weight = ("9")
-tshirt = Package("tshirt")
-tshirt.weight = ("0.5")
-blades = Package("rollerblades")
-blades.weight = ("6")
+xbox = Package("xbox", "9")
+tshirt = Package("tshirt", "0.5")
+blades = Package("rollerblades", "6")
+
 
 truck = AmazonTruck()
 truck.driver = "Joe"
