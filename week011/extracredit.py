@@ -12,25 +12,25 @@ class PacMan:
     def __init__(self, t):
         self.t = t
 
-        def draw(self):
-            self.t.penup()
-            self.t.goto(self.x, self.y)
-            self.t.pensize(5)
-            self.t.pencolor(self.color)
-            self.t.pendown()
-            self.t.circle(self.radius, 90 - self.mouth)
-            pos = self.t.position()
-            self.t.goto(self.x, self.y + self.radius)
-            self.t.penup()
-            self.t.goto(pos[0], pos[1])
-            self.t.circle(self.radius, self.mouth * 2)
-            pos = self.t.position()
-            self.t.pendown()
-            self.t.goto(self.x, self.y + self.radius)
-            self.t.penup()
-            self.t.goto(pos[0], pos[1])
-            self.t.pendown()
-            self.t.circle(self.radius, 270 - self.mouth)
+    def draw(self):
+        self.t.penup()
+        self.t.goto(self.x, self.y)
+        self.t.pensize(5)
+        self.t.pencolor(self.color)
+        self.t.pendown()
+        self.t.circle(self.radius, 90 - self.mouth)
+        pos = self.t.position()
+        self.t.goto(self.x, self.y + self.radius)
+        self.t.penup()
+        self.t.goto(pos[0], pos[1])
+        self.t.circle(self.radius, self.mouth * 2)
+        pos = self.t.position()
+        self.t.pendown()
+        self.t.goto(self.x, self.y + self.radius)
+        self.t.penup()
+        self.t.goto(pos[0], pos[1])
+        self.t.pendown()
+        self.t.circle(self.radius, 270 - self.mouth)
 
     def advance(self):
         self.mouth += self.direction
